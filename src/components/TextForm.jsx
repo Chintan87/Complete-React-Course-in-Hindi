@@ -5,12 +5,14 @@ export default function TextForm(props) {
     // *> console.log("Uppercase was clicked" + text); This console is a only for dibuging
     let newText = text.toUpperCase(); // *> toUpperCase(); is a javascript function
     setText(newText);
+    props.showAlert("Converted to uppercase!", "sucess");
   };
 
   const handleLoClick = () => {
     // *> console.log("Lowercase was clicked" + text); This console is a only for dibuging
     let newText = text.toLowerCase(); // *> toUpperCase(); is a javascript function
     setText(newText);
+    props.showAlert("Converted to lowercase!", "sucess");
   };
 
   const handleOnChange = (event) => {
@@ -23,11 +25,13 @@ export default function TextForm(props) {
     let text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to Clipboard!", "sucess");
   };
 
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/); // javaScript regexs
     setText(newText.join(" "));
+    props.showAlert("Extra spaced removed!", "sucess");
   };
 
   const [text, setText] = useState("");
