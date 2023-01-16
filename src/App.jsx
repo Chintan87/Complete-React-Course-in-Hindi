@@ -26,7 +26,7 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
       showAlert("Dark mode has been enabled", "sucess");
-      document.title = "TextUtils - Dark Mode"; // *> For Add This line in Title of WEBSITE
+      // document.title = "TextUtils - Dark Mode"; // *> For Add This line in Title of WEBSITE
       // setInterval(() => {
       //   document.title = "TextUtils is Amazing Mode";
       // }, 2000);
@@ -37,7 +37,7 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "sucess");
-      document.title = "TextUtils - Light Mode"; // *> For Add This line in Title of WEBSITE
+      // document.title = "TextUtils - Light Mode"; // *> For Add This line in Title of WEBSITE
     }
   };
   return (
@@ -50,14 +50,14 @@ function App() {
           <Routes>
             {/* /user --> Component1 
             /user/home --> --> Component 2 */}
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/about" element={<About mode={mode} />} />
             <Route
               exact
               path="/"
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter the text to analyze below"
+                  heading="Try TextUtils - Word Counter, Character Counter, Remove extra spaces"
                   mode={mode}
                 />
               }
